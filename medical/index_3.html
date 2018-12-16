@@ -1,0 +1,217 @@
+<html>
+<head>
+    <style id="stndz-style"></style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>智能医疗辅助诊断系统</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./layer-v3.1.1/layer.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="./jbk/html5_shiv.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./jbk/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./jbk/jbk_tool_2014.js"></script>
+    <script type="text/javascript" src="./js/parameter.js"></script>
+    <link href="./jbk/new2013/css/base2014.css" type="text/css" rel="stylesheet">
+    <link href="./jbk/new2013/css/jbk_tool2014.css" type="text/css" rel="stylesheet">
+    <link href="./css/my.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<input type="hidden" id="currentSex" value="性别_男">
+<input type="hidden" id="currentAge" value="疾病年龄_壮年（30~39岁）">
+<input type="hidden" id="currentJobID" value="4">
+<input type="hidden" value="2026299" id="symIdList">
+
+<!--===================================STEP3    =======================================-->
+<section class="main wrap" id="s3">
+    <div class="myTool">
+        <div class="myToolTop"><span class="setp3"></span><a href="javascript:void(0)" target="_self" class="refe"
+                                                             id="restart">重新自查</a></div>
+        <div class="myBox2"><strong>个人信息</strong>
+            <div class="selectBox" style="margin-left:30px;"><b>性别：</b>
+                <div class="selectJs"><span id="s3_sex_show" style="color: rgb(51, 51, 51);">男</span>
+                    <div class="select" style="display: none;"><a href="#" id="s3_sex_male">男</a><a href="#"
+                                                                                                    id="s3_sex_female">女</a>
+                    </div>
+                </div>
+            </div>
+            <div class="selectBox"><b>年龄：</b>
+                <div class="selectJs selectAge"><span id="s3_age_show" style="color: rgb(51, 51, 51);">30~39岁</span>
+                    <div class="select" id="s3_age" style="display: none;">
+                        <a href="#" v="疾病年龄_新生儿（一个月内）">一个月内</a>
+                        <a href="#" v="疾病年龄_婴儿（2~11个月）">2~11个月</a>
+                        <a href="#" v="疾病年龄_儿童（1~12岁）">1~12岁</a>
+                        <a href="#" v="疾病年龄_少年（13~18岁）">13~18岁</a>
+                        <a href="#" v="疾病年龄_青年（19~29岁）">19~29岁</a>
+                        <a href="#" v="疾病年龄_壮年（30~39岁）">30~39岁</a>
+                        <a href="#" v="疾病年龄_中年（40~49岁）">40~49岁</a>
+                        <a href="#" v="疾病年龄_中老年（50~64岁）">50~64岁</a>
+                        <a href="#" v="疾病年龄_老年（65以上）">65岁以上</a>
+                    </div>
+                </div>
+            </div>
+            <div class="workBox"><b>职业：</b>
+                <div class="workSelect">
+                    <input type="text" class="workText" value="" placeholder="请选择您的职业" disabled="disabled" id="s3_job_show"
+                           style="color: rgb(51, 51, 51);">
+                    <div note="ff-problem"
+                         style="position:absolute; left:0; right:0; top:0; bottom:0;height:29px;width:182px"></div>
+                </div>
+                <div class="workForm"><span>请选择您的职业</span><a href="#" class="close"></a>
+                    <ul class="workList" id="s3_job">
+                        <li>
+
+                            <a href="#" v="3">工人</a>
+                            |
+                            <a href="#" v="4">农民</a>
+                            |
+                            <a href="#" v="11">教师</a>
+                            |
+                            <a href="#" v="7">服务员</a>
+                            |
+                            <a href="#" v="5">司机</a>
+                            |
+                            <a href="#" v="6">厨师</a>
+                            <br>
+                            <a href="#" v="10">办公室/白领</a>
+                            |
+                            <a href="#" v="12">医师/护士</a>
+                            |
+                            <a href="#" v="9">公务员</a>
+                            |
+                            <a href="#" v="8">销售/采购</a>
+                            |
+                            <a href="#" v="13">其他</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="myBox3_2">
+            <div class="my3_2_1">
+                <div class="my3_2top"><strong>已添加症状</strong><a href="javascript:;" class="allRe" target="_self"
+                                                               id="reselectAll">全部重选</a></div>
+                <div class="addzz_scroll" style="overflow: hidden; position: relative; padding: 0px;">
+                    <div class="jscroll-c" style="top: 0px; z-index: 9999; zoom: 1; position: relative; padding: 0px;">
+                        <div style="height:0px;overflow:hidden"></div>
+                        <ul class="my3_2i" id="my3_s1" style="width: 220px;height: 100%;overflow: auto;">
+                            <!--<li id="symSelected_2026299" class="default"><span>咳嗽</span>
+                            <input type="hidden"-->
+                            <!--value="2026299"></li>-->
+                        </ul>
+                    </div>
+                    <!--<div class="jscroll-e" unselectable="on"-->
+                         <!--style="height: 100%; top: 0px; right: 0px; position: absolute; overflow: hidden; z-index: 10000; background: url(&quot;http://image.39.net/jbk/new2013/images/s_bg2.gif&quot;) right 0px repeat-y; width: 10px; display: none;">-->
+                        <!--<div class="jscroll-u"-->
+                             <!--style="position: absolute; top: 0px; width: 100%; left: 0px; background: url(&quot;http://image.39.net/jbk/new2013/images/s_bg2.gif&quot;) right 0px repeat-y; overflow: hidden; height: 0px;"></div>-->
+                        <!--<div class="jscroll-h" unselectable="on"-->
+                             <!--style="position: absolute; left: 0px; border: 1px solid rgb(212, 212, 212); top: 0px; background: -45px 0px repeat-y rgb(212, 212, 212); width: 8px; height: 977.326px;"></div>-->
+                        <!--<div class="jscroll-d"-->
+                             <!--style="position: absolute; bottom: 0px; width: 100%; left: 0px; background: url(&quot;http://image.39.net/jbk/new2013/images/s_bg2.gif&quot;) right 0px repeat-y; overflow: hidden; height: 0px;"></div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="my3_2top2"><strong>相关症状</strong></div>
+                <div class="xgzz_scroll" style="overflow: hidden;position: relative;padding: 0px;">
+                    <div class="jscroll-c" style="top: 0px;z-index: 9999;zoom: 1;position: relative;padding-right: 0px;">
+
+                        <div class="loading" id="relatedSymLoading" style="display: none;"></div>
+                        <ul class="my_2l" id="xgzz" style="height:  100%;overflow-y: overlay;">
+                            <!--<li><i></i><a href="javascript:void(0);" target="_self" sid="2032578">恶心与呕吐</a></li>-->
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="my3_3">
+            <h4>症状自查结果</h4>
+            <div class="my3_3scroll" id="my3_s2" style="overflow: auto;position: relative;padding: 0px;">
+                <div class="jscroll-c" style="">
+
+                    <div class="loading" id="resultLoading" style="display: none;"></div>
+                    <ul class="myResult">
+                        <!--<li did="643592" s="0.1250869215101132"><strong><a href="http://jbk.39.net/fzjqnxz/"-->
+                                                                           <!--class="myResult_title">腹直肌鞘内血肿</a><span-->
+                                <!--class="myResult_right">[<a href="http://jbk.39.net/fzjqnxz/blby/">病因</a>] [<a-->
+                                <!--href="http://jbk.39.net/fzjqnxz/zztz/">症状</a>] [<a-->
+                                <!--href="http://jbk.39.net/fzjqnxz/yyzl/">治疗</a>] [<a-->
+                                <!--href="http://jbk.39.net/fzjqnxz/ysbj/">饮食保健</a>]</span></strong>-->
+                            <!--<p>腹直肌位于腹白线(腹正中线)的两侧，被腹直肌鞘整个包裹在内。腹直肌有3～4个腱划，与腹直肌鞘的前层紧密黏着，而与腹直鞘后层不黏着，... [<a-->
+                                    <!--href="http://jbk.39.net/fzjqnxz/">查看详情</a>]</p>-->
+                            <!--<div class="press"><span>可能性：</span>-->
+                                <!--<div class="pressBg"><span class="pressColor" style="width:12.508692151011319%;"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="myReTip" id="correctOrNot" status="open">
+                <div class="myReTbg"></div>
+                <div class="myReTcon">
+                    <span>温馨提示:</span>
+                    <a href="#" class="tipClose"></a>
+                    <div class="tipText"><span>症状自查结果仅供参考，请及时到正规医院就诊。祝您早日康复！</span><a href="javascript:void(0);"
+                                                                                      class="tipTBut2" target="_self"
+                                                                                      id="unlike">不准</a><a
+                            href="javascript:void(0);" class="tipTBut1" target="_self" id="like">准</a></div>
+                </div>
+            </div>
+            <div class="myReTip myReTip2" style="display: none;">
+                <div class="myReTbg"></div>
+                <div class="myReTcon">
+                    <span>反馈成功！</span>
+                    <a href="#" class="tipClose"></a>
+                    <div class="tipText"><span>谢谢您的反馈，我们会参考您的反馈，不断优化产品，为您提供更好的服务。祝您早日康复！</span></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!--用户反馈-->
+<div class="feedbackBox">
+    <a href="javascript:void(0);" title="用户反馈" target="_self" class="feedbackBox_btn"></a>
+    <div class="feedbackBox_wrap">
+        <!--填写反馈-->
+        <div class="feedbackBox_write">
+            <a href="javascript:void(0);" title="收起" target="_self" class="feedbackBox_hide">收起</a>
+            <span class="feedback_content"><textarea id="feedback_content" placeholder="您有什么要反馈的呢？"></textarea></span>
+            <span class="feedback_tips">如果可以，请留下您的邮箱，以便于我们第一时间给您回复。</span>
+            <span class="feedback_email"><input type="text" name="feedback_email" id="feedback_email" placeholder=""></span>
+            <span class="feedback_tj"><input id="tjfk" type="button" name="feedback_tj" value="" title="提交"></span>
+        </div>
+        <!--填写反馈 end-->
+        <!--反馈成功-->
+        <div class="feedbackBox_success" style="position:  fixed;margin-left: -300px;">
+            <a href="javascript:void(0);" title="收起" target="_self" class="feedbackBox_hide">收起</a>
+            <div class="success_tips">
+                <strong>提交成功！</strong>
+                <p>谢谢您的反馈，我们会参考您的反馈，不断优化产品，为您提供更好的服务。</p>
+            </div>
+        </div>
+        <!--反馈成功 end-->
+    </div>
+</div>
+<script type="text/javascript" src="./js/fankui.js"></script>
+<!--用户反馈end-->
+
+<!--右下角分享-->
+<link href="./share/css/smohan.pop&share.css" rel="stylesheet" type="text/css">
+<div id="position">
+    <button class="share">分享</button>
+</div>
+<script type="text/javascript" src="./share/scripts/smohan.pop&share.js"></script>
+<script type="text/javascript" src="./share/scripts/qrcode.min.js"></script>
+<!--右下角分享end-->
+
+<!-- 自定义 -->
+<script type="text/javascript" src="./js/my3.js"></script>
+</body>
+</html>

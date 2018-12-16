@@ -1,0 +1,20 @@
+spring:
+  data:
+    neo4j:
+      uri: http://39.96.14.71:7474
+      username: neo4j
+      password: 336699
+  application:
+    name: diagnostic
+  output:
+    ansi:
+      enabled: always
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8080
+ribbon:
+  ReadTimeout: 120000 #请求处理的超时时间
+  ConnectTimeout: 30000 #请求连接的超时时间
