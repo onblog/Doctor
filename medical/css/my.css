@@ -1,0 +1,94 @@
+input.workText {
+    width: 100%;
+    height: auto;
+}
+
+input#searchWord {
+    height: 40px;
+}
+
+.searchResult td:hover {
+    background: #e5f7d9;
+    text-decoration: none;
+    color: #694;
+}
+
+.symTlist li a:hover {
+    background: #e5f7d9;
+    color: #694 !important;
+    text-decoration: none;
+}
+
+.symTlist {
+    overflow-y: auto;
+    display: block;
+    height: 100%;
+}
+
+.myTool {
+    margin: 0 auto;
+}
+
+.layui-layer-tab .layui-layer-title span.layui-this {
+    background-color: #6c9655;
+    border-width: 0px;
+}
+
+.feedbackBox_success {
+    position: fixed;
+    margin-left: -388px;
+}
+
+/* 弹出文字 */
+.layui-layer-title {
+    display: inline-table;
+    background-color: #79b15b;
+    color: #FFF;
+    padding-right: 1px;
+    width: 100%;
+    font-size: 1rem;
+    -webkit-text-stroke: 0.9px #fff;
+    letter-spacing: 0.04em;
+}
+
+p#word {
+    font-size: 1.3em;
+    color: #2d2d2d;
+    letter-spacing: 1.8px;
+    line-height: 2.5em;
+    height: 100%;
+}
+
+div.layui-layer-tab {
+    border: 6px solid #79b15b;
+}
+
+.layui-layer-tabmain {
+    background-color: #f9f9f9;
+}
+
+/*右下角分享*/
+#position {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+}
+.share{
+    width: 50px;
+    font-family: fantasy;
+    font-size: 15px;
+    color:  #fff;
+    border-radius:  50px;
+    height: 50px;
+    background-color: #85c85f;
+}
+#graph {
+    float: right;
+    color: #333333;
+}
+#graph:hover{
+    color: #f60;
+}
+.txt {
+    display: none;
+}

@@ -1,0 +1,122 @@
+body{ _overflow:visible;}
+
+/* 201404928 顶部导航 */
+.art_topnav_channel { height: 38px; background: #fff url(../images/topnav_icon.png) repeat-x 0 0; margin: 0 auto; margin-bottom: 10px; width: auto; }
+.art_topnav_channel i, .art_topnav_channel cite, .art_topnav_channel em { font-style: normal; }
+.art_topnav_channel dl, .art_topnav_channel dd, .art_topnav_channel dt, .art_topnav_channel ul, .art_topnav_channel li { margin: 0; padding: 0; list-style: none; display: block; }
+.art_topnav_channel .art_wrap { height: 37px; width: 970px; margin: 0 auto; color: #333; background: none; overflow: visible; }
+.art_topnav_channel #top_loginbox { position: static; width: auto; margin: 0; +margin: 0; -margin: 0; padding: 0; z-index: 6; display: block; background: none; -background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='crop'); }
+.art_topnav_channel #top_loginbox ul { float: none; width: auto; margin: 0; padding: 0; -padding: 0; border: none; background: none; }
+.art_topnav_channel #top_loginbox ul li { float: none; width: auto; margin: 0; padding: 0; font:; list-style: none; }
+.art_topnav_channel #top_loginbox ul li input { width: auto; height: auto; margin: 0; padding: 0; font:; vertical-align: middle; }
+.art_topnav_channel #top_loginbox ul li .loginbtn { width: auto; height: auto; margin: 0; padding: 0; *padding: 0; font:; vertical-align: middle; border: none; cursor: pointer; background: none; }
+.art_topnav_channel #top_loginbox ul li a { margin: 0; color: #069; }
+.art_topnav_channel #top_loginbox ul li a:hover { color: #f60; }
+.art_topnav_channel #top_loginbox iframe { top: 0px; left: 0px; position: absolute; visibility: inherit; z-index: -1; display: none; -display: block; }
+.art_topnav_channel #top_loginbox span { width: auto; height: auto; display: inline; overflow: visible; background: none; }
+.art_topnav_channel #top_loginbox span b { float: none; width: auto; height: auto; padding: 0; margin: 0; font:; color: #333; text-align: center; background: none; }
+.art_topnav_channel #top_loginbox span cite { float: none; width: auto; height: auto; margin: 0; background: none; cursor: pointer; }
+.art_topnav_channel #top_loginbox ul .prompt { padding: 3px 0 0 0; text-overflow: clip; white-space: pre-wrap; overflow: visible; font: 12px/20px 宋体 !important; font: 12px/20px 宋体; color: #f60; display: none; }
+.art_topnav_channel #top_loginbox div { float: none; width: auto; height: auto; display: inherit; overflow: visible; background: none; -background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='crop'); }
+.art_topnav_channel .art_navtext { float: left; font-family: Verdana, "Microsoft YaHei"; font-size: 14px; color: #fff; font-weight: 500; padding-left: 0; }
+.art_topnav_channel .art_navtext span { float: left; background: url(../images/topnav_icon.png) no-repeat right -107px; position: relative; margin-left: -2px; }
+.art_topnav_channel .art_navtext span a { float: left; color: #333; height: 36px; line-height: 36px; padding: 0 10px; position: relative; margin-left: 0; background-image: none; font-family: "Microsoft YaHei"; }
+.art_topnav_channel .art_navtext span a:hover { text-decoration: none; color: #52902e !important; background: none; }
+.art_topnav_channel .art_navtext span.home { background: none; margin-left: 0; z-index: 2; }
+.art_topnav_channel .art_navtext span.home a, .art_topnav_channel .art_navtext span.home a:hover { background: url(../images/topnav_logo.png) no-repeat; width: 104px; height: 22px; overflow: hidden; text-indent: -100em; margin: 8px 0 0 0; padding: 0 11px 0 0; }
+.art_topnav_channel .art_navmore { float: left; height: 37px; line-height: 36px; margin-left: -2px; }
+.art_topnav_channel .art_navmore .n_more { float: left; padding: 0 20px 0 10px; color: #333; font-family: "Microsoft YaHei"; font-size: 14px; background: url(../images/topnav_icon.png) no-repeat right -156px; position: relative; cursor: pointer; border-left: solid 1px #edf2ea; border-right: solid 1px #edf2ea; height: 36px; }
+.art_topnav_channel .art_navmore.hover .n_more { background-color: #fff; background-position: right -206px; border-left: solid 1px #c4d7b9; border-right: solid 1px #c4d7b9; z-index: 92; height: 37px; color: #52902e; }
+.art_topnav_channel .art_navmore a { color: #333; }
+.art_topnav_channel .art_navmore.hover .n_more a, .art_topnav_channel .art_navmore a:hover { color: #52902e !important; text-decoration: none; }
+.art_topnav_channel .art_navmore .n_drop { position: absolute; width: 116px; margin: 36px 0 0 0; *margin: 36px 0 0 -116px; z-index: 90; }
+.art_topnav_channel .sbtn_hover .n_drop{ z-index:91;}
+.art_topnav_channel .art_navmore .n_drop .drop_list { background: #fff; overflow: hidden; border: solid 1px #c4d7b9; font-family: "Microsoft YaHei"; font-size: 14px; }
+.art_topnav_channel .art_navmore .n_drop .drop_list li { line-height: 34px; background: url(../images/tnav_linebg.png) repeat-x center bottom; padding: 0 10px; }
+.art_topnav_channel .art_navmore .n_drop .drop_list li.nobline { background: none; }
+.art_topnav_channel .art_navmore .n_drop .drop_list li a { color: #333; text-decoration: none; }
+.art_topnav_channel .art_navmore .n_drop .drop_list li a:hover { color: #52902e !important; text-decoration: none; }
+.art_topnav_channel .art_navlogin { float: right; font-size: 14px; color: #333; font-weight: 500; height: 36px; line-height: 36px; padding-right: 0; }
+.art_topnav_channel .art_navlogin #top_loginbox { float: left; }
+.art_topnav_channel .art_navlogin #top_loginbox cite { float: left; font-family: "Microsoft YaHei"; background: url(../images/topnav_icon.png) no-repeat 8px -255px; padding: 0 8px 0 25px; cursor: pointer; border-left: solid 1px #edf2ea; border-right: solid 1px #edf2ea; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box { position: absolute; z-index: 91; width: 209px; margin: 36px 0 0 -146px; *margin: 36px 0 0 -209px; cursor: default; font-size: 12px; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con { background: #fff; height: 100%; border: solid 1px #c4d7b9; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul { padding: 10px 5px 10px 15px; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li { overflow: hidden; zoom: 1; vertical-align: bottom; padding: 5px 0; line-height: 25px; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li .login-input { border: solid 1px #cad4c4; height: 26px; line-height: 26px; font-size: 12px; color: #333; width: 165px; padding: 0 5px; margin: 0; float: left; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li .formbtns { float: left; background: url(../images/topnav_btn_dl.png) no-repeat 0 0; width: 62px; height: 26px; border: none; text-indent: -100em; overflow: hidden; cursor: pointer; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li .btn_hover { background-position: 0 -31px; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li a.wjmm { float: left; color: #666; margin-left: 10px; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul li a.wjmm:hover { color: #52902e !important; text-decoration: none; }
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_con ul #NavLoginError span{color: #F60;line-height: 22px;padding: 2px 0 5px;display: inline-block;vertical-align: top;}
+.art_topnav_channel .art_navlogin #top_loginbox .n_login_box .n_login_bot { display: none; }
+.art_topnav_channel .art_navlogin .n_reg { float: left; cursor: pointer; font-family: Verdana, "Microsoft YaHei"; }
+.art_topnav_channel .art_navlogin .n_reg a { background: url(../images/topnav_icon.png) no-repeat 8px -303px; padding: 0 0 0 25px; display: block; font-family: "Microsoft YaHei"; }
+.art_topnav_channel .art_navlogin .n_reg a, .art_topnav_channel .art_navlogin .n_reg a:hover { color: #333 !important; text-decoration: none; }
+.art_topnav_channel .art_navlogin #top_loginbox.hover cite { background-color: #fff; border-left: solid 1px #c4d7b9; border-right: solid 1px #c4d7b9; z-index: 92; color: #52902e; height: 37px; position: relative; }
+.art_topnav_channel .art_navlogin .n_reg a:hover { color: #52902e !important; }
+.art_topnav_channel .art_navlogin .n_exit { display: block; width: 32px; float: right; text-align: right; font-family: "Microsoft YaHei"; zoom: 1; }
+.art_topnav_channel .art_navlogin .n_exit a { display: block; color: #333; text-decoration: none;}
+.art_topnav_channel .art_navlogin .n_exit a:hover { color: #52902e !important; text-decoration: none; }
+.art_topnav_channel .art_navlogin .n_userinfo { float: right; }
+.art_topnav_channel .art_navlogin .n_userinfo em { width: 68px;padding: 0 20px 0 10px; background: url(../images/topnav_icon.png) no-repeat right -156px; color: #333; cursor: pointer; float: right; height: 36px; line-height: 36px; overflow: hidden; zoom: 1; border-left: solid 1px #edf2ea; border-right: solid 1px #edf2ea; position: relative; z-index: 92; font-family: "Microsoft YaHei"; }
+.art_topnav_channel .art_navlogin .n_userinfo em a { color: #333; text-decoration: none; display: block; white-space: nowrap; text-overflow: ellipsis; -webkit-text-overflow: ellipsis; max-width: 68px; overflow: hidden; text-align: right; }
+.art_topnav_channel .art_navlogin .n_userinfo em a:hover { color: #52902e; text-decoration: none; }
+.art_topnav_channel .art_navlogin .UIbox { display: none; float: left; position: absolute; margin-right: -408px;/**margin-right: -409px;_margin-right: -408px;*/ right: 50%; top: 36px; font-size: 14px; font-family: "Microsoft YaHei"; z-index: 90; }
+.art_topnav_channel .art_navlogin .sbtn_hover .UIbox{ z-index:91;}
+.art_topnav_channel .art_navlogin .UIbox .ulist { display: block; overflow: hidden; zoom: 1; width: 98px; background: #fff; border: solid 1px #c4d7b9; }
+.art_topnav_channel .art_navlogin .UIbox .ulist ul li { text-align: left; line-height: 33px; padding-left: 20px; height: 34px; background: url(../images/tnav_linebg.png) repeat-x center bottom; }
+.art_topnav_channel .art_navlogin .UIbox .ulist ul li.nobline { background: none; height: 32px; }
+.art_topnav_channel .art_navlogin .UIbox .ulist ul li a { color: #666; }
+.art_topnav_channel .art_navlogin .UIbox .ulist ul li a:hover { color: #52902e !important; text-decoration: none; }
+.art_topnav_channel .art_navlogin .UIbox i { display: none; }
+.art_topnav_channel .art_navlogin .n_userinfo.h em { background-color: #fff; color: #52902e; text-decoration: none; background-position: right -206px; border-left: solid 1px #c4d7b9; border-right: solid 1px #c4d7b9; height:37px; }
+.art_topnav_channel .art_navlogin .n_userinfo.h em a, .art_topnav_channel .art_navlogin .n_userinfo.h em a:hover { color: #52902e !important; }
+
+
+.art_topnav_channel .art_navlogin .n_message{ float:right;font-family:"Microsoft YaHei"; font-size:14px; width:72px; text-align:center; margin-left:5px;}
+.art_topnav_channel .art_navlogin .n_message em{ display:block; color: #333; cursor:pointer; height:36px; overflow:hidden; zoom:1; float:left; width:70px;border-left: solid 1px #edf2ea; border-right: solid 1px #edf2ea;}
+.art_topnav_channel .art_navlogin .n_message em i{ color:#f60; font-size:12px;}
+.art_topnav_channel .art_navlogin .n_message em a{ color:#333; text-decoration:none;}
+.art_topnav_channel .art_navlogin .n_message em a:hover{ color:#52902e!important; text-decoration:none;}
+.art_topnav_channel .art_navlogin .n_message.hover em{ background-color:#008c9a; color:#52902e!important;text-decoration:none;border-left: solid 1px #c4d7b9; border-right: solid 1px #c4d7b9; background-color: #fff; color: #52902e; text-decoration: none; height:37px;}
+.art_topnav_channel .art_navlogin .n_message.hover em a, .art_topnav_channel .art_navlogin .n_message.hover em a:hover{color:#52902e!important;}
+.art_topnav_channel .art_navlogin .n_message .message_wrap{display:none; position:absolute; right:50%; margin-right:-493px;/**margin-right:-494px;_margin-right:-493px;*/ top:37px; font-size:12px;width:274px; z-index:5;}
+.art_topnav_channel .art_navlogin .sbtn_hover .message_wrap{ z-index:89;}
+.art_topnav_channel .art_navlogin .n_message .message_wrap .message_bg{display:block;overflow:hidden; zoom:1; background:#fff; width:264px; float:left; border:solid 1px #c8dabe; border-top:none;}
+.art_topnav_channel .art_navlogin .n_message .message_wrap .message_bbg{ display:block; background:none; width:264px; height:10px; line-height:10px; font-size:0; overflow:hidden; zoom:1; display:none;}
+
+.art_topnav_channel .art_navlogin .message_box{ display:block; width:264px; margin:0 auto; overflow:hidden; color:#333; font-family:Verdana;}
+.art_topnav_channel .art_navlogin .message_box .message_tabs{ padding-left:20px; background:url(../images/message_tabs_bg.png) repeat-x bottom;height:46px;}
+.art_topnav_channel .art_navlogin .message_box .message_tabs dd{ float:left; width:76px; text-align:center; height:46px; line-height:46px; font-size:12px; overflow:hidden; cursor:pointer;}
+.art_topnav_channel .art_navlogin .message_box .message_tabs dd i{ display:inline-block; padding:0 10px; }
+.art_topnav_channel .art_navlogin .message_box .message_tabs dd i.new{background:url(../images/message_tips_ico.png) no-repeat right 13px;}
+.art_topnav_channel .art_navlogin .message_box .message_tabs dd.on{ background:url(../images/message_tips_role.png) no-repeat center bottom; color:#52902e;}
+
+.art_topnav_channel .art_navlogin .message_box .message_data{ clear:both; line-height:normal; height:auto; display:none;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li{vertical-align:bottom; overflow:hidden;zoom:1; background:url(../images/message_tips_linebg.png) repeat-x left bottom; padding:12px 15px 15px 15px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li.li_hover{ background-color:#fafef7;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li img{ float:left; width:30px; height:30px; border:solid 1px #eaeaea; margin-top:5px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r{ float:right; width:190px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r strong{ display:block; line-height:24px;color:#666; font-size:14px; font-weight:bold; text-align:left;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r strong a{ color:#666;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r strong a:hover{ color:#f60;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r p{ line-height:22px;color:#999; overflow:hidden;zoom:1;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r p a{ color:#52902e;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r p a:hover{ color:#f60;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r p .mbtn{ float:left; background:url(../images/message_tips_btn.png) no-repeat 0 0; width:80px; height:23px; line-height:23px; text-align:center; overflow:hidden; font-size:12px; margin:8px 7px 0 0; color:#666;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_list li .dlist_r p .mbtn:hover{ background-position:-87px 0; color:#666!important; text-decoration:none;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot{ display:block; line-height:26px; padding:8px 30px 8px 60px; overflow:hidden;zoom:1; font-weight:bold;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot i{ color:#f60;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot a{ float:left; color:#666;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot a:hover{ color:#f60;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot .message_set{ float:right; background:url(../images/message_tips_set.png) no-repeat 0 0; width:16px; height:16px; line-height:16px; overflow:hidden; font-size:1px; text-indent:-100em; margin-top:6px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_bot .message_set:hover{ background-position:0 -21px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_none{ display:block; background:url(../images/message_tips_linebg.png) repeat-x bottom; padding-bottom:20px;}
+.art_topnav_channel .art_navlogin .message_box .message_data .message_data_none p{background:url(../images/message_none_icon2.png) no-repeat center bottom;font-family:"Microsoft YaHei"; font-size:20px; text-align:center; padding:20px 10px 60px 10px; color:#666;}
+.art_topnav_channel .art_navtext .top-qcode { background: none; }
+.art_topnav_channel .art_navtext .top-qcode a {     background: url(../images/topnav_icon.png) no-repeat right -156px; padding: 0 20px 0 10px; }
+.art_topnav_channel .art_navtext .top-qcode a:hover {  background: url(../images/topnav_icon.png) no-repeat right -156px;}
+.art_topnav_channel .art_navtext .top-qcode em {position: absolute;top: 36px;border: #D3E1CB 1px solid;background: #fff;left: 0;display: none;z-index: 1;width: 140px;text-align: center;}
+.art_topnav_channel .art_navtext .top-qcode i {display: block;font-size: 12px;text-align: center;padding: 6px 0;font-family: Microsoft YaHei;color: #333;}
+.art_topnav_channel .art_navtext .top-qcode img { }

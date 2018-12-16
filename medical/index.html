@@ -1,0 +1,141 @@
+<html>
+<head>
+    <style id="stndz-style"></style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>智能医疗辅助诊断系统</title>
+    <link href="./jbk/new2013/css/base2014.css" type="text/css" rel="stylesheet">
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+    <script src="./layer-v3.1.1/layer.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="./jbk/html5_shiv.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./jbk/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./jbk/jbk_tool_2014.js"></script>
+    <link href="./jbk/new2013/css/jbk_tool2014.css" type="text/css" rel="stylesheet">
+    <link href="./css/my.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!--内容-->
+<form action="/zicha?step=SelectSymptom" method="post" id="baseinfoform" target="_self">
+    <input type="hidden" id="currentSex" name="currentSex" value="性别_女">
+    <input type="hidden" id="currentAge" name="currentAge" value="疾病年龄_儿童（1~12岁）">
+    <input type="hidden" id="currentJobID" name="currentJobID" value="11">
+    <input type="hidden" value="" id="symIdList">
+
+    <!--===================================STEP1=======================================-->
+    <section class="main wrap" id="s1">
+        <div class="myTool">
+            <div class="myToolTop"><span class="setp1"></span></div>
+            <div class="myBox1">
+                <div class="my1Tit">---填写你的个人信息，这样将使你的自查结果更加准确。---</div>
+                <div class="myTab myTab1">
+                    <div class="myNameBox"><span class="my1name">性别:</span><span class="my1name">年龄:</span><span
+                            class="my1name">职业:</span></div>
+                    <div class="myCon">
+                        <div class="radioBox"><a href="#" class="radioEd" id="s1_sex_male">男</a><a href="#"
+                                                                                                   id="s1_sex_female"
+                                                                                                   class="">女</a>
+                        </div>
+                        <div class="selectBox">
+                            <div class="selectJs selectAge" changed="true"><span id="s1_age_show">19~29岁</span>
+                                <div class="select" id="s1_age" style="display: none;">
+                                    <a href="#" v="[0,0]">一个月内</a>
+                                    <a href="#" v="[0,1]">2~11个月</a>
+                                    <a href="#" v="[1,12]">1~12岁</a>
+                                    <a href="#" v="[13.18]">13~18岁</a>
+                                    <a href="#" v="[19,29]">19~29岁</a>
+                                    <a href="#" v="[30,39]">30~39岁</a>
+                                    <a href="#" v="[40,49]">40~49岁</a>
+                                    <a href="#" v="[50,64]">50~64岁</a>
+                                    <a href="#" v="[65,100]">65岁以上</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workBox" changed="true">
+                            <div class="workSelect">
+                                <input type="text" class="workText" disabled="disabled" placeholder="请选择您的职业" value="">
+                                <div note="ff-problem"
+                                     style="position:absolute; left:0; right:0; top:0; bottom:0;height:29px;width:182px"></div>
+                            </div>
+                            <i>填写职业能让您的结果更准确</i>
+                            <div class="workForm" style="display: none;"><span>请选择您的职业</span><a href="#"
+                                                                                                class="close"></a>
+                                <ul class="workList" id="s1_job">
+                                    <li>
+
+                                        <a href="#" v="3">工人</a>
+                                        |
+                                        <a href="#" v="4">农民</a>
+                                        |
+                                        <a href="#" v="11">教师</a>
+                                        |
+                                        <a href="#" v="7">服务员</a>
+                                        |
+                                        <a href="#" v="5">司机</a>
+                                        |
+                                        <a href="#" v="6">厨师</a>
+                                        |
+                                        <a href="#" v="10">办公室/白领</a>
+                                        <br>
+                                        <a href="#" v="12">医师/护士</a>
+                                        |
+                                        <a href="#" v="9">公务员</a>
+                                        |
+                                        <a href="#" v="8">销售/采购</a>
+                                        |
+                                        <a href="#" v="13">其他</a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <input type="button" class="myBut" value=" " id="startToDiagnosis">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<!--===================================STEP1 end=======================================-->
+<!--内容 end-->
+<!--用户反馈-->
+<div class="feedbackBox">
+    <a href="javascript:void(0);" title="用户反馈" target="_self" class="feedbackBox_btn"></a>
+    <div class="feedbackBox_wrap">
+        <!--填写反馈-->
+        <div class="feedbackBox_write">
+            <a href="javascript:void(0);" title="收起" target="_self" class="feedbackBox_hide">收起</a>
+            <span class="feedback_content"><textarea id="feedback_content" placeholder="您有什么要反馈的呢？"></textarea></span>
+            <span class="feedback_tips">如果可以，请留下您的邮箱，以便于我们第一时间给您回复。</span>
+            <span class="feedback_email"><input type="text" name="feedback_email" id="feedback_email"
+                                                placeholder=""></span>
+            <span class="feedback_tj"><input id="tjfk" type="button" name="feedback_tj" value="" title="提交"></span>
+        </div>
+        <!--填写反馈 end-->
+        <!--反馈成功-->
+        <div class="feedbackBox_success" style="position:  fixed;margin-left: -300px;">
+            <a href="javascript:void(0);" title="收起" target="_self" class="feedbackBox_hide">收起</a>
+            <div class="success_tips">
+                <strong>提交成功！</strong>
+                <p>谢谢您的反馈，我们会参考您的反馈，不断优化产品，为您提供更好的服务。</p>
+            </div>
+        </div>
+        <!--反馈成功 end-->
+    </div>
+</div>
+<script type="text/javascript" src="./js/fankui.js"></script>
+<!--用户反馈end-->
+
+<!--右下角分享-->
+<link href="./share/css/smohan.pop&share.css" rel="stylesheet" type="text/css">
+<div id="position">
+    <button class="share">分享</button>
+</div>
+<script type="text/javascript" src="./share/scripts/smohan.pop&share.js"></script>
+<script type="text/javascript" src="./share/scripts/qrcode.min.js"></script>
+<!--右下角分享end-->
+
+<!--自定义-->
+<script type="text/javascript" src="./js/my1.js"></script>
+</body>
+</html>

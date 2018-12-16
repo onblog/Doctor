@@ -1,0 +1,57 @@
+﻿/* CSS Document */
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* reset for all browsers */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, address, big, cite, code, del, dfn, em, ins, kbd, q, s, samp, small, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font: 12px/1.5 Verdana, SimSun;
+    color: #666666;
+    background: #FFF;
+    _position: relative;
+    _overflow: hidden; /**/
+}
+
+* body {
+    background-attachment: fixed;
+}
+
+a {
+    color: #006699;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F60 !important;
+    text-decoration: underline;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img, iframe {
+    border: none;
+    vertical-align: top;
+}
+
+b, i, cite {
+    font-weight: normal;
+    font-style: normal;
+}
