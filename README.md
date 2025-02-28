@@ -135,7 +135,7 @@
 
 **请知悉：项目采用 Java 技术栈，非Python机器学习！**
 
-![IMG_7680](https://github.com/user-attachments/assets/ceba5394-91f5-4e2d-bfba-1f2dd512a1ed)
+<img src="https://github.com/user-attachments/assets/ceba5394-91f5-4e2d-bfba-1f2dd512a1ed" width="200px">
 
 需要备注来意
 
