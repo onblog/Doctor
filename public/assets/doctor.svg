@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" role="img" aria-label="医生插画">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#e6f3ea" />
+      <stop offset="100%" stop-color="#f2f9f5" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="100" cy="112" r="96" fill="url(#bg)" />
+
+  <!-- 招手的手 -->
+  <g>
+    <path d="M140 146c12-8 18-22 15-38" stroke="#ffffff" stroke-width="17" stroke-linecap="round" fill="none" />
+    <circle cx="155" cy="102" r="10.5" fill="#f8cdae" />
+    <path d="M150 96c-4-6-2-12 2-13s7 3 7 9" fill="#f8cdae" />
+    <path d="M156 94c-1-7 2-11 6-11s6 5 5 11" fill="#f8cdae" />
+  </g>
+
+  <!-- 垂下的手 -->
+  <g>
+    <path d="M60 146c-7 10-10 24-8 38" stroke="#ffffff" stroke-width="17" stroke-linecap="round" fill="none" />
+    <circle cx="53" cy="187" r="9.5" fill="#f8cdae" />
+  </g>
+
+  <!-- 白大褂 -->
+  <path d="M100 110c-22 0-40 9-46 26l-5 62h102l-5-62c-6-17-24-26-46-26z" fill="#ffffff" stroke="#e9dbcf" stroke-width="2" />
+  <path d="M100 134v64" stroke="#efe3d8" stroke-width="2" />
+  <circle cx="100" cy="152" r="2.6" fill="#e3d4c8" />
+  <circle cx="100" cy="168" r="2.6" fill="#e3d4c8" />
+
+  <!-- 内搭衬衫与领带 -->
+  <path d="M100 110l-11 16 11 12 11-12z" fill="#2f7d52" />
+  <path d="M100 138l-5 30 5 8 5-8z" fill="#1d6b47" opacity="0.9" />
+
+  <!-- 听诊器 -->
+  <path d="M84 114c-1 20 6 34 16 34s17-14 16-34" stroke="#6b5b52" stroke-width="3" fill="none" stroke-linecap="round" />
+  <circle cx="100" cy="152" r="6.5" fill="#f7f1e9" stroke="#6b5b52" stroke-width="2.6" />
+
+  <!-- 脖子 -->
+  <path d="M88 96h24v18H88z" fill="#f0bd9b" />
+
+  <!-- 头 -->
+  <ellipse cx="100" cy="70" rx="33" ry="36" fill="#f8cdae" />
+  <circle cx="66" cy="76" r="6" fill="#f8cdae" />
+  <circle cx="134" cy="76" r="6" fill="#f8cdae" />
+
+  <!-- 腮红 -->
+  <ellipse cx="76" cy="86" rx="7" ry="4.5" fill="#f2a184" opacity="0.45" />
+  <ellipse cx="124" cy="86" rx="7" ry="4.5" fill="#f2a184" opacity="0.45" />
+
+  <!-- 头发 -->
+  <path d="M66 62c0-22 15-35 34-35s34 13 34 35c0 6-2 10-4 12-3-15-13-23-30-23s-27 8-30 23c-2-2-4-6-4-12z" fill="#4a3a31" />
+
+  <!-- 眼镜 -->
+  <g fill="#ffffff" stroke="#3b3530" stroke-width="2.6">
+    <circle cx="86" cy="72" r="11.5" />
+    <circle cx="114" cy="72" r="11.5" />
+  </g>
+  <path d="M97.5 72h5" stroke="#3b3530" stroke-width="2.6" stroke-linecap="round" />
+  <g fill="#3b3530">
+    <circle cx="86" cy="72" r="2.6" />
+    <circle cx="114" cy="72" r="2.6" />
+  </g>
+
+  <!-- 微笑 -->
+  <path d="M92 90q8 7 16 0" stroke="#c4705a" stroke-width="2.6" fill="none" stroke-linecap="round" />
+</svg>

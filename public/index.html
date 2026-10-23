@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>医疗知识图谱 · 症状自查</title>
+    <meta
+      name="description"
+      content="医疗知识图谱是一个症状自查工具：填写基本信息、按人体部位选择症状，查看可能相关的疾病参考。仅供参考，不构成诊断。"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <span class="brand">
+            <img class="brand-mark" src="/favicon.svg" alt="" width="26" height="26" />
+            <b>医疗知识图谱</b>
+            <em>症状自查</em>
+          </span>
+          <div class="topbar-actions">
+            <ol class="steps" id="steps">
+              <li data-step="1" class="is-active"><b>1.填写个人信息</b></li>
+              <li data-step="2"><b>2.选择症状</b></li>
+              <li data-step="3"><b>3.结果</b></li>
+            </ol>
+            <a class="gh-link" href="https://github.com/onblog/doctor" target="_blank" rel="noreferrer" aria-label="GitHub 仓库" title="GitHub 仓库">
+              <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="content">
+          <!-- ----------------------------------------------------- step 1 -->
+          <div class="step-panel" data-panel="1">
+            <p class="tip">--- 填写你的个人信息，这样将使你的自查结果更加准确。---</p>
+
+            <div class="form-row">
+              <span class="form-label">性别：</span>
+              <div class="radio-row" id="sexGroup">
+                <button type="button" class="radio-item is-active" data-sex="male">男</button>
+                <button type="button" class="radio-item" data-sex="female">女</button>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <span class="form-label">年龄：</span>
+              <select id="ageSelect" class="select">
+                <option value="0">一个月内</option>
+                <option value="0">2~11个月</option>
+                <option value="1">1~12岁</option>
+                <option value="13">13~18岁</option>
+                <option value="19" selected>19~29岁</option>
+                <option value="30">30~39岁</option>
+                <option value="40">40~49岁</option>
+                <option value="50">50~64岁</option>
+                <option value="65">65岁以上</option>
+              </select>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn-primary" id="startBtn">开始自查</button>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------- step 2 -->
+          <div class="step-panel" data-panel="2" hidden>
+            <div class="info-bar">
+              <span>个人信息：<b id="infoSex">男</b> · <b id="infoAge">19~29岁</b></span>
+              <button type="button" class="link-btn" data-goto="1">修改</button>
+            </div>
+
+            <div class="search-bar">
+              <div class="search-input-wrap">
+                <input
+                  id="symptomInput"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="请输入您的症状，如头痛，咳嗽..."
+                  aria-label="搜索症状"
+                />
+                <ul class="suggest" id="suggestList" hidden></ul>
+              </div>
+              <button type="button" class="btn-search" id="searchBtn">搜索</button>
+            </div>
+
+            <div class="block">
+              <div class="block-title"><span class="block-icon">◈</span>人体图选择症状</div>
+              <div class="body-area">
+                <div class="body-stage" id="bodyStage"></div>
+                <div class="head-zones" id="headZones" hidden></div>
+
+                <div class="part-popover" id="partSymptoms" hidden>
+                  <div class="part-head">
+                    <b id="partTitle"></b>
+                    <button type="button" class="link-btn" id="partClose">关闭</button>
+                  </div>
+                  <div class="letter-bar" id="letterBar" hidden></div>
+                  <div class="part-chips" id="partChips"></div>
+                </div>
+              </div>
+              <p class="body-caption" id="bodyCaption">把鼠标移到人体图上，点击部位查看症状</p>
+            </div>
+
+            <div class="block">
+              <div class="block-title"><span class="block-icon">◈</span>已选症状</div>
+              <div class="chips" id="selectedChips"></div>
+              <p class="empty" id="selectedEmpty">还没有选择症状，可以搜索或从人体图里挑选。</p>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn-primary" id="analyzeBtn">开始分析</button>
+              <button type="button" class="btn-ghost" data-goto="1">上一步</button>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------- step 3 -->
+          <div class="step-panel" data-panel="3" hidden>
+            <div class="info-bar">
+              <span>个人信息：<b id="infoSex2">男</b> · <b id="infoAge2">19~29岁</b></span>
+              <button type="button" class="link-btn" id="restartBtn">重新自查</button>
+            </div>
+
+            <div class="result-layout">
+              <div class="result-main">
+                <div class="result-head">
+                  <h2>可能相关的疾病</h2>
+                  <p class="result-note" id="resultNote">结果仅供参考，最终诊断请以医生诊断为准。</p>
+                </div>
+                <div class="result-list" id="resultList"></div>
+              </div>
+
+              <aside class="result-side">
+                <div class="side-card">
+                  <h3>已添加症状</h3>
+                  <div class="chips chips--small" id="resultSymptoms"></div>
+                </div>
+                <div class="side-card">
+                  <h3>相关症状</h3>
+                  <p class="hint">点击可加入，再次分析</p>
+                  <div class="chips chips--small" id="relatedSymptoms"></div>
+                </div>
+              </aside>
+            </div>
+
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <h1>症状自查</h1>
+          <p class="sidebar-lead">自查帮您解疑惑<br /><em>病急不再乱投医</em></p>
+          <img class="sidebar-doctor" src="/assets/doctor.svg" alt="医生插画" width="200" height="240" />
+          <div class="sidebar-stats" aria-label="数据规模">
+            <!-- 数据规模写死为修正后的数据集统计：疾病 / 症状词条 / 去重后的疾病-症状关系 -->
+            <span><b id="statDisease">7,733</b>疾病</span>
+            <span><b id="statSymptom">9,159</b>症状</span>
+            <span><b id="statEdge">154,081</b>关联</span>
+          </div>
+          <p class="sidebar-note">结果仅供参考，最终诊断请以医生诊断为准。</p>
+          <p class="sidebar-contact"><a href="mailto:hello@wordtk.com">核心数据库商用授权：hello@wordtk.com</a></p>
+
+          <h2>自查步骤</h2>
+          <ol class="side-steps">
+            <li><span>1</span><p>填写个人信息，让您的自查结果更准确。</p></li>
+            <li><span>2</span><p>选择症状，根据身体的不适选择一个或多个症状。</p></li>
+            <li><span>3</span><p>查看结果，全面了解疾病信息。</p></li>
+          </ol>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <p>医疗知识图谱 · 仅供健康参考，不构成医疗诊断</p>
+        <p class="footer-contact">
+          核心数据库商用授权与购买请联系：<a href="mailto:hello@wordtk.com">hello@wordtk.com</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="modal" id="modal" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-head">
+          <h2 id="modalTitle">疾病详情</h2>
+          <button type="button" class="modal-close" data-close-modal aria-label="关闭">×</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="/assets/app.js"></script>
+  </body>
+</html>

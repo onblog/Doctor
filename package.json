@@ -1,0 +1,27 @@
+{
+  "name": "doctor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Knowledge-graph based medical self-assessment running on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev --port 8788",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test",
+    "db:local": "wrangler d1 execute doctor --local --file=./migrations/0001_init.sql",
+    "db:remote": "wrangler d1 execute doctor --remote --file=./migrations/0001_init.sql",
+    "data:convert": "node scripts/convert-mysql-dump.mjs",
+    "data:load": "node scripts/load-d1.mjs",
+    "data:days": "node scripts/split-days.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "pinyin-pro": "^3.27.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.151.2"
+  },
+  "license": "AGPL-3.0-only"
+}

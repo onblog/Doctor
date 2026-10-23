@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "doctor",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-14",
+
+  // 只走自有域名；workers.dev 子域关闭，避免两个入口并存。
+  "workers_dev": false,
+
+  // 部署时由 Cloudflare 自动创建 DNS 记录并签发证书（wordtk.com 已在同一账号下）。
+  "routes": [{ "pattern": "doctor.wordtk.com", "custom_domain": true }],
+
+  // 静态优先：命中 public/ 的请求由边缘直出，**不执行 Worker、不计 Worker 请求数**。
+  // 只有 /api/* 会进入 Worker。健康检查也走 /api/ 前缀，保持「所有后端接口统一前缀」。
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+
+  // 首次部署前执行 `npx wrangler d1 create doctor`，把返回的 database_id 填到这里。
+  // 本地 `wrangler dev` 使用本地 SQLite，不依赖这个 id 指向真实数据库。
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "doctor",
+      "database_id": "a1200374-73d4-410e-9cf5-779ed5cda070",
+      // 只读场景开读副本，查询可以就近走，不必每次都回主库
+      "read_replication": { "mode": "auto" }
+    }
+  ],
+
+  // 日志与追踪全开：logs 落 Workers Logs（可按请求查询），traces 落 Workers Traces
+  // （含 D1 子请求的调用链）；采样率 1 = 全量，流量很低不会顶到配额。
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true
+    }
+  }
+}
