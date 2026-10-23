@@ -7,8 +7,8 @@
   // 只走自有域名；workers.dev 子域关闭，避免两个入口并存。
   "workers_dev": false,
 
-  // 部署时由 Cloudflare 自动创建 DNS 记录并签发证书（wordtk.com 已在同一账号下）。
-  "routes": [{ "pattern": "doctor.wordtk.com", "custom_domain": true }],
+  // 域名绑定不写在这里：生产域名属于部署配置，统一在 Cloudflare Dashboard 的
+  // Worker → Settings → Domains & Routes 维护，仓库里不出现线上域名。
 
   // 静态优先：命中 public/ 的请求由边缘直出，**不执行 Worker、不计 Worker 请求数**。
   // 只有 /api/* 会进入 Worker。健康检查也走 /api/ 前缀，保持「所有后端接口统一前缀」。
