@@ -507,12 +507,23 @@ function loadD3() {
   return d3Loading;
 }
 
+// 弹窗内容每次都从头看：不记忆上一次滚动位置
+function resetModalScroll() {
+  const body = el("modalBody");
+  if (!body) return;
+  body.scrollTop = 0;
+}
+
 function openModal() {
   el("modal").hidden = false;
   document.body.classList.add("is-locked");
+  // 先显示再重置：元素在 display:none 时设 scrollTop 不生效；下一帧再压一次兜底
+  resetModalScroll();
+  requestAnimationFrame(resetModalScroll);
 }
 
 function closeModal() {
+  resetModalScroll();
   el("modal").hidden = true;
   document.body.classList.remove("is-locked");
 }
@@ -602,6 +613,8 @@ async function openDisease(id) {
       <h3 class="modal-section">疾病详情</h3>
       <div class="detail-rows">${blocks}</div>
     `;
+  // 从加载态换成完整详情后高度会变，统一压回顶部，避免停在上一屏的位置
+  body.scrollTop = 0;
 
   // 有些文本长度超过阈值、但在弹窗里其实并不溢出，此时不该显示「展开全文」
   requestAnimationFrame(() => {
